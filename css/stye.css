@@ -1,0 +1,57 @@
+:root{
+    --bg-color: azure;
+    --text-color: #202020;
+    --btn-bg-light: #e8e8ea;
+    --btn-bg-dark: #4B6BFB;
+}
+.dark-mode{
+    --bg-color: #000;
+    --text-color: white;
+}
+
+body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: 0.3s ease-in-out;
+}
+
+.theme-switch{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 60px;
+    height: 30px;
+    padding: 0;
+    background-color: var(--btn-bg-light);
+    border-radius: 15px;
+    transition: background-color 0.3s ease-in-out;
+}
+.theme-switch.dark{
+    justify-content: flex-end;
+    background-color: var(--btn-bg-dark);
+}
+.button-wrapper{
+    display: flex;
+    align-items: center;
+}
+.button-wrapper .btn{
+    padding: 0px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+}
+.switch-button img{
+    background: white;
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    padding: 5px;
+}
+.dark-mode .nav-link {
+    color: var(--text-color) !important;
+}
+
+.logo img{
+    height: 36px;
+}
