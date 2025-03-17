@@ -8,25 +8,48 @@
     --bg-color: #000;
     --text-color: white;
 }
-
 body{
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: 0.3s ease-in-out;
 
 }
+/* Global Layout*/
+*{
+    margin: 0;
+    padding: 0;
+}
+.container-wrapper{
+    width: 100%;
+}
 
+.container{
+    margin-top: 0;
+    margin-left: 5%;
+    margin-bottom: 0;
+    margin-right: 5%;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+ul{
+    list-style-type: none;
+}
 
+/*Button*/
 .theme-switch{
     display: flex;
     justify-content: flex-start;
     align-items: center;
     width: 60px;
+    cursor: pointer;
     height: 30px;
     padding: 0;
     background-color: var(--btn-bg-light);
     border-radius: 15px;
     transition: background-color 0.3s ease-in-out;
+  
 }
 .theme-switch.dark{
     justify-content: flex-end;
@@ -35,25 +58,79 @@ body{
 .button-wrapper{
     display: flex;
     align-items: center;
+    border: none;
+    padding: 5px;
 }
-.button-wrapper .btn{
+.button-wrapper .switch-button{
     padding: 0px;
-    height: 24px;
     display: flex;
     align-items: center;
-    padding-left: 5px;
+    border: none;
+    border-radius: 50%;
+
 }
 .switch-button img{
-    background: white;
     border-radius: 50%;
-    height: 24px;
-    width: 24px;
+    height: 15px;
+    width: 15px;
     padding: 5px;
 }
 .dark-mode .nav-link {
     color: var(--text-color) !important;
 }
+#header{
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    background-color: var(--bg-color);
+    padding: 20px;
+    
+}
 
-.logo img{
-    height: 36px;
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.menu{
+    display: flex;
+    list-style-type: none;
+    gap: 15px;
+}
+.menu-icon i{
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .menu-icon i{
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+  }
+  .menu-icon{
+    position: relative;
+  }
+
+  .menu{
+    flex-direction: column;
+    position: absolute;
+    top: 30px;
+    width: 120px;
+    display: none;
+    background-color: var(--bg-color); 
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  .menu-icon:focus .menu{
+    top: 10px;
+  }
+  .menu-item a{
+    font-size: 20px;
+  }
+  .theme-switch{
+    margin-right: 5%;
+  }
 }
