@@ -1,6 +1,7 @@
 const toggleButton = document.getElementById("toggle-button");
 
 const logo = document.querySelector(".logo img")
+const menuItem = document.querySelector(".menu-item a");
 
 console.log(localStorage.getItem("theme"));
 
@@ -8,6 +9,7 @@ if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark-mode");
     toggleButton.classList.add("dark");
     logo.src = "/assets/logodark.png";
+
 
 }
 toggleButton.addEventListener("click", () => {
@@ -18,9 +20,12 @@ toggleButton.addEventListener("click", () => {
     if (document.body.classList.contains("dark-mode")) {
         localStorage.setItem("theme", "dark");
         logo.src = "/assets/logodark.png";
+        menuItem.color ="white";
     } else {
         localStorage.setItem("theme", "light");
-        logo.src = "/assets/logowhite.png"
+        logo.src = "/assets/logowhite.png";
+        menuItem.color ="#202020";
+
     }
 });
 
